@@ -17,10 +17,14 @@
   </header>
 
   <main>
+    <a class="back-link" href="https://www.feelprepared.co.uk/">&larr; FeelPrepared</a>
     <form id="lock" class="card lock" autocomplete="off">
       <h2>Staff only</h2>
       <p class="note">Enter the clinic password to choose leaflets for a patient.</p>
-      <input type="password" id="pw" aria-label="Clinic password" placeholder="Password">
+      <div class="pw-wrap">
+        <input type="password" id="pw" aria-label="Clinic password" placeholder="Password" autocapitalize="off" spellcheck="false">
+        <button type="button" class="pw-toggle" id="pw-toggle" aria-controls="pw" aria-pressed="false">Show</button>
+      </div>
       <button type="submit">Unlock</button>
       <p class="error" id="pw-error" hidden>That password isn't right. Check it and try again.</p>
     </form>
@@ -60,6 +64,16 @@
     // ignoring capitals. To change it, replace PW_HASH with the SHA-256 of the new password in lowercase.
     const PW_HASH = '42a895e31309a2a85c7701ca7c13bb1b004a3ef6bee80c1799d8aae41e88fbfd';
     const KEY = 'oac-unlocked';
+
+    // Show / hide the password while typing
+    document.getElementById('pw-toggle').addEventListener('click', function () {
+      const pw = document.getElementById('pw');
+      const showing = pw.type === 'text';
+      pw.type = showing ? 'password' : 'text';
+      this.textContent = showing ? 'Show' : 'Hide';
+      this.setAttribute('aria-pressed', showing ? 'false' : 'true');
+      pw.focus();
+    });
     async function sha256(t) {
       const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
       return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
