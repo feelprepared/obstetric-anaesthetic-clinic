@@ -1,141 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feel Prepared — Information About Anaesthesia and Pain</title>
-  <meta name="description" content="Clear, trusted information about anaesthesia and pain, from NHS Lothian teams.">
-  <link rel="icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="apple-touch-icon" href="favicon-180.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --nhs-blue: #005EB8;
-      --nhs-blue-soft: #4A9FD4;
-      --nhs-blue-light: #D5E8F5;
-      --nhs-blue-pale: #EBF4FB;
-      --nhs-charcoal: #2C3E50;
-      --nhs-charcoal-mid: #4A5568;
-      --nhs-grey2: #768692;
-      --nhs-grey4: #D8DDE0;
-      --nhs-grey5: #F8FAFB;
-    }
-    body { font-family: 'DM Sans', sans-serif; color: var(--nhs-charcoal); background: var(--nhs-grey5); min-height: 100vh; display: flex; flex-direction: column; }
-
-    .fp-header { display: flex; align-items: center; justify-content: space-between; padding: 0 1.75rem; background: var(--nhs-blue); height: 60px; }
-    .fp-logo { font-size: 27px; font-weight: 500; color: white; text-decoration: none; }
-    .fp-logo span { color: #9BD4F5; }
-    .fp-staff-btn {
-      font-size: 17px; color: white; opacity: 0.85;
-      border: 1px solid rgba(255,255,255,0.35); background: none; padding: 6px 14px;
-      border-radius: 4px; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.15s, background 0.15s;
-    }
-    .fp-staff-btn:hover { opacity: 1; background: rgba(255,255,255,0.12); }
-
-    .fp-hero { background: var(--nhs-blue-pale); border-bottom: 1px solid var(--nhs-blue-light); padding: 2.5rem 1.75rem 2.25rem; text-align: center; }
-    .fp-hero img { width: 96px; height: 96px; margin-bottom: 1rem; border-radius: 50%; }
-    .fp-hero h1 { font-size: 34px; font-weight: 500; line-height: 1.25; margin-bottom: 0.6rem; }
-    .fp-hero p { font-size: 18px; color: var(--nhs-charcoal-mid); max-width: 520px; margin: 0 auto; line-height: 1.5; }
-
-    .fp-body { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 0 1.25rem 2rem; }
-    .fp-section-label { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--nhs-grey2); padding: 1.5rem 0.25rem 0.6rem; }
-    .fp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
-    .fp-card {
-      display: flex; flex-direction: column; gap: 6px; padding: 1.1rem 1.2rem;
-      border: 1px solid var(--nhs-grey4); border-left: 4px solid var(--nhs-blue); border-radius: 4px;
-      background: white; text-decoration: none; color: inherit; transition: background 0.15s, border-color 0.15s;
-    }
-    .fp-card:hover, .fp-card:focus-visible { background: var(--nhs-blue-pale); border-color: var(--nhs-blue-soft); border-left-color: var(--nhs-blue); }
-    .fp-card h2 { font-size: 20px; font-weight: 500; color: var(--nhs-blue); }
-    .fp-card p { font-size: 15px; color: var(--nhs-charcoal-mid); line-height: 1.45; }
-    .fp-card .fp-tag { font-size: 13px; color: var(--nhs-grey2); margin-top: 2px; }
-
-    .fp-footer { background: white; border-top: 1px solid var(--nhs-grey4); padding: 0.9rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .fp-footer img { height: 36px; width: auto; display: block; }
-    .fp-footer-credit { font-size: 12px; color: var(--nhs-grey2); }
-    .fp-footer-credit strong { color: var(--nhs-charcoal-mid); font-weight: 500; }
-
-    @media (max-width: 600px) {
-      .fp-hero h1 { font-size: 28px; }
-      .fp-hero p { font-size: 16px; }
-      .fp-footer { flex-direction: column; justify-content: center; text-align: center; }
-    }
-
-    /* Header logo, matching the labour section */
-    .fp-header { height: 76px; }
-    .fp-logo { display: inline-flex; align-items: center; gap: 10px; font-size: 32px; }
-    .fp-logo img { height: 46px; width: 46px; border-radius: 50%; display: block; }
-    .fp-logo .fp-logo-text { color: white; }
-    .fp-logo .fp-logo-text span { color: #9BD4F5; }
-    @media (max-width: 600px) {
-      .fp-header { padding: 0 0.85rem; height: 64px; }
-      .fp-logo { font-size: 21px; gap: 6px; }
-      .fp-logo img { height: 30px; width: 30px; }
-      .fp-staff-btn { font-size: 12px; padding: 5px 9px; gap: 4px; white-space: nowrap; }
-    }
-
-    /* Single featured topic, footer links, general information line */
-    .fp-from { font-size: 14px !important; color: var(--nhs-grey2) !important; margin-top: 0.9rem !important; }
-    .fp-grid-single { grid-template-columns: 1fr; max-width: 560px; margin: 1.75rem auto 0; }
-    .fp-card-main { padding: 1.5rem 1.5rem 1.35rem; gap: 8px; }
-    .fp-card-main h2 { font-size: 23px; }
-    .fp-card-main p { font-size: 16px; }
-    .fp-cta { font-size: 17px; font-weight: 500; color: var(--nhs-blue); margin-top: 6px; }
-    .fp-card-main:hover .fp-cta { text-decoration: underline; }
-    .fp-general { max-width: 560px; margin: 1.25rem auto 0; padding: 0 0.5rem; text-align: center; font-size: 14px; line-height: 1.5; color: var(--nhs-charcoal-mid); }
-    .fp-footer-links { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--nhs-grey2); }
-    .fp-footer-links a { color: var(--nhs-blue); text-decoration: none; }
-    .fp-footer-links a:hover { text-decoration: underline; }
-    .fp-grid-two { grid-template-columns: 1fr 1fr; max-width: 760px; margin: 0 auto; gap: 12px; }
-    .fp-label-two { max-width: 760px; margin: 0 auto; padding-top: 1.75rem; }
-    @media (max-width: 640px) { .fp-grid-two { grid-template-columns: 1fr; } }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Your Pregnancy Information</title>
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="apple-touch-icon" href="home-icon.png">
+  <link rel="icon" type="image/png" href="home-icon.png">
+  <meta name="apple-mobile-web-app-title" content="My leaflets">
 </head>
 <body>
-  <header class="fp-header">
-    <a href="./" class="fp-logo"><img src="site-logo.png" alt=""><span class="fp-logo-text">feel<span>prepared</span></span></a>
+  <header>
+    <div class="inner"><div>
+    <h1 id="site-name">Your Pregnancy Information</h1>
+    <p>Leaflets chosen for you by your clinic team</p>
+    </div><img class="logo" id="logo" alt="" hidden></div>
   </header>
 
-  <section class="fp-hero">
-    <h1>Feel prepared for your care</h1>
-    <p>Clear, trusted information about anaesthesia and pain relief in pregnancy, birth and childhood.</p>
-    <p class="fp-from">From anaesthetists and pain teams in NHS Lothian</p>
-  </section>
+  <main>
+    <section id="chosen">
+      <h2>Your leaflets</h2>
+      <div id="leaflet-list"></div>
+    </section>
 
-  <main class="fp-body">
-    <p class="fp-section-label fp-label-two">Choose a topic</p>
-    <div class="fp-grid fp-grid-two">
-      <!-- To add a new section, copy one of these cards and change the link, title and text. -->
-      <a class="fp-card fp-card-main" href="labour/">
-        <h2>Pain relief in labour and caesarean birth</h2>
-        <p>Leaflets about your pain relief options in your own language, plus videos in English.</p>
-        <span class="fp-cta">Choose your language <span aria-hidden="true">&rarr;</span></span>
-        <span class="fp-tag">Available in 20 languages</span>
-      </a>
-      <a class="fp-card fp-card-main" href="Paediatric-Chronic-Pain/">
-        <h2>Paediatric pain management</h2>
-        <p>For children and young people living with persistent pain, their families, and referring clinicians, at the Royal Hospital for Children and Young People.</p>
-        <span class="fp-cta">Find out more <span aria-hidden="true">&rarr;</span></span>
-        <span class="fp-tag">Passcode given in clinic</span>
-      </a>
-    </div>
-    <p class="fp-general">General information only. Always discuss your choices with your healthcare team.</p>
+    <section id="save" class="card save" hidden>
+      <h2>Keep these leaflets</h2>
+      <p id="save-steps"></p>
+      <button type="button" id="share">Send this page to myself</button>
+      <p class="note" id="share-done" hidden>Link copied. Paste it into a text or email to yourself.</p>
+    </section>
+
+    <section class="featured">
+      <h2>Useful websites</h2>
+      <div id="featured-list"></div>
+    </section>
+
+    <p class="note">
+      This page does not contain any personal information about you.
+    </p>
+    <p class="note">
+      If you have questions about anything you read, speak to your midwife or clinical team.
+    </p>
   </main>
 
-  <footer class="fp-footer">
-    <img src="nhs-lothian-charity-logo.png" alt="NHS Lothian Charity">
-    <span class="fp-footer-credit">Created by <strong>Dr Katie Turnbull</strong></span>
-    <nav class="fp-footer-links" aria-label="Footer">
-      <a href="disclaimer.html">Disclaimer</a>
-      <span aria-hidden="true">·</span>
-      <a href="https://maternity.feelprepared.co.uk/clinic.html">For staff</a>
-    </nav>
-  </footer>
+  <script src="leaflets.js"></script>
+  <script>
+    const cfg = window.LEAFLET_CONFIG;
+    if (cfg.logo) { const lg = document.getElementById('logo'); lg.src = cfg.logo; lg.alt = 'Logo'; lg.hidden = false; }
+    document.getElementById('site-name').textContent = cfg.siteName;
+    document.title = cfg.siteName;
+
+    const byId = Object.fromEntries(cfg.leaflets.map(l => [l.id, l]));
+    const SAVE_KEY = 'my-leaflets';
+    let ids = (new URLSearchParams(location.search).get('l') || '')
+      .split(',').map(s => s.trim()).filter(id => byId[id]);
+
+    // Remember the leaflets on this phone, so opening the site again shows them even without the full link
+    if (ids.length) {
+      try { localStorage.setItem(SAVE_KEY, ids.join(',')); } catch (e) {}
+    } else {
+      try {
+        const saved = (localStorage.getItem(SAVE_KEY) || '').split(',').filter(id => byId[id]);
+        if (saved.length) {
+          ids = saved;
+          history.replaceState(null, '', '?l=' + ids.join(','));
+        }
+      } catch (e) {}
+    }
+
+    const list = document.getElementById('leaflet-list');
+
+    function card(href, title, meta, desc) {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      const t = document.createElement('div');
+      t.className = 'title';
+      t.textContent = title;
+      a.appendChild(t);
+      if (desc) {
+        const d = document.createElement('div');
+        d.textContent = desc;
+        a.appendChild(d);
+      }
+      if (meta) {
+        const m = document.createElement('div');
+        m.className = 'meta';
+        m.textContent = meta;
+        a.appendChild(m);
+      }
+      return a;
+    }
+
+    if (ids.length === 0) {
+      list.innerHTML = '<p class="note">No leaflets were selected. Please ask your clinic team to scan the code again, or use the websites below.</p>';
+    } else {
+      // Keep the category order from the config
+      const ordered = [...new Set(ids)].sort((a, b) =>
+        cfg.categories.indexOf(byId[a].category) - cfg.categories.indexOf(byId[b].category));
+      ordered.forEach(id => {
+        const l = byId[id];
+        const kind = l.file ? 'PDF' : 'Web page';
+        list.appendChild(card(l.file || l.url, l.title, `${l.source} · ${kind}`, l.desc));
+      });
+    }
+
+    // "Keep these leaflets" box with steps for the patient's own phone
+    if (ids.length) {
+      const ua = navigator.userAgent;
+      const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/.test(ua);
+      const steps = document.getElementById('save-steps');
+      const isMac = /Mac/.test(navigator.platform || ua);
+      if (isIOS) {
+        steps.innerHTML = 'To keep this page, tap the <strong>three dots</strong> (•••) and choose <strong>Add Bookmark</strong>.';
+      } else if (isAndroid) {
+        steps.innerHTML = 'To keep this page, tap the <strong>three dots</strong> (⋮) at the top right, then tap the <strong>star</strong>.';
+      } else {
+        steps.innerHTML = 'To keep this page, press <strong>' + (isMac ? '⌘ + D' : 'Ctrl + D') + '</strong> to bookmark it.';
+      }
+      document.getElementById('save').hidden = false;
+      document.getElementById('share').addEventListener('click', async () => {
+        const url = location.href;
+        if (navigator.share) {
+          try { await navigator.share({ title: 'My pregnancy leaflets', text: 'Leaflets from my NHS Lothian clinic appointment', url }); return; }
+          catch (e) { if (e.name === 'AbortError') return; }
+        }
+        try { await navigator.clipboard.writeText(url); document.getElementById('share-done').hidden = false; }
+        catch (e) { window.prompt('Copy this link and send it to yourself:', url); }
+      });
+    }
+
+    const featured = document.getElementById('featured-list');
+    cfg.featured.forEach(f => featured.appendChild(card(f.url, f.title, f.description)));
+  </script>
 </body>
 </html>
