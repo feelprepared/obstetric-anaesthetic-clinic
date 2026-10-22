@@ -71,6 +71,8 @@ window.LEAFLET_CONFIG = {
       category: "Pain relief in labour", source: "NHS Lothian", file: "mobilising-with-epidural.pdf", review: "Nov 2026" },
     { id: "remi",  title: "Remifentanil PCA pain relief for labour", desc: "A drip-based pain relief you control with a button, often used if an epidural isn't suitable.",
       category: "Pain relief in labour", source: "NHS Lothian", file: "remifentanil-pca.pdf" },
+    { id: "pdph",  title: "Headache after an epidural or spinal",    desc: "Why a headache can happen after an epidural or spinal, how it's treated, and what an epidural blood patch involves.",
+      category: "Pain relief in labour", source: "NHS Lothian", file: "headache-after-epidural-spinal.pdf" },
 
     // Anaesthesia for caesarean birth
     { id: "spin",  title: "Spinal anaesthetics: risks and side effects", desc: "A picture guide to the spinal anaesthetic used for most caesarean births.",
